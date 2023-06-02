@@ -2,8 +2,9 @@
    agent any
    stages {
         stage('version') {
-         steps {
+          steps {
              sh 'python3 --version'
+           }
          }
         stage('test') {
           steps {
