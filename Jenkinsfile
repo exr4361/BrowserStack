@@ -20,7 +20,7 @@
           steps {
               sh '''
                     export BS_USR=${BS_Credentials_USR}
-                    export BS_PW=${BS_Credentials_PSR}
+                    export BS_PW=${BS_Credentials_PSW}
                     python3 browserstechchallenge.py
                  '''
           }
