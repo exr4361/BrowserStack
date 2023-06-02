@@ -22,8 +22,8 @@
                 passwordVariable: 'USER-PSW',
              ]]) {
               sh '''
-                    export %BS_USR%=${USER-EMAIL}
-                    export %BS_PW%=${USER-PSW}
+                    export BS_USR=${USER-EMAIL}
+                    export BS_PW=${USER-PSW}
                     python3 browserstechchallenge.py
                  '''
              }
