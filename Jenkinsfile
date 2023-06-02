@@ -24,7 +24,7 @@
               sh """
                     export BS_USER="${email}"
                     export BS_PASS="${pass}"
-                    python3 browserstechchallenge.py.py
+                    python3 browserstechchallenge.py
                  """
           }
        }
