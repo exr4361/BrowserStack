@@ -76,4 +76,4 @@ def tech_challenge(browser):
 
 # Run the test for each browser in parallel
 for browser in caps:
-    tech_challenge(DesiredCapabilities(**caps))
+    tech_challenge(DesiredCapabilities(**browser))
