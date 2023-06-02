@@ -1,5 +1,4 @@
 Appium-Python-Client
 browserstack-local
 selenium
-virtualenv==20.2.2
 
