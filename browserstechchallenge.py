@@ -5,38 +5,37 @@ import time
 import os
 
 # BrowserStack Credentials
-username = os.environ.get('BROWSERSTACK_USERNAME')
+userName = os.environ.get('BROWSERSTACK_USERNAME')
 accessKey = os.environ.get('BROWSERSTACK_ACCESS_KEY')
 buildName = os.environ.get('JENKINS_LABEL')
 
 # Set up for the desired capabilities for each browser
 caps = [
     {
-        "os": "Windows",
-        "osVersion": "10",
-        "browser": "Chrome",
-        "browserVersion": "latest",
-        "resolution": "1920x1080",
-        "userName": username,
-        "accessKey": accessKey
+      browserName: 'Chrome',
+      'bstack:options': {
+        browserVersion: 'latest',
+        os: 'Windows',
+        osVersion: '10'
+      }
     },
     {
-        "os": "OS X",
-        "osVersion": "Ventura",
-        "browser": "Firefox",
-        "browserVersion": "latest",
-        "resolution": "1920x1080",
-        "userName": username,
-        "accessKey": accessKey
+      browserName: 'Firefox',
+      'bstack:options': {
+        browserVersion: 'latest',
+        os: 'OS X',
+        osVersion: 'Ventura'
+      }
     },
     {
-        "device": "Samsung Galaxy S22",
-        "realMobile": "true",
-        "osVersion": "12.1",
-        "userName": username,
-        "accessKey": accessKey
+      browserName: 'samsung',
+      'bstack:options': {
+        deviceOrientation: 'portrait',
+        deviceName: 'Samsung Galaxy S22',
+        osVersion: '12.0'
+      }
     }
-]
+  ]
 
 # BrowserStack Trial credentials
 bs_email = os.getenv('BS_USR')  # BrowserStack email from Jenkinsfile
@@ -45,9 +44,7 @@ bs_password = os.getenv('BS_PW')  # BrowerStack password from JenkinsFile
 def tech_challenge(browser):
     # Set up the WebDriver with the desired capabilities
     driver = webdriver.Remote(
-        command_executor="https://hub-cloud.browserstack.com/wd/hub",
-        desired_capabilities=browser,
-    )
+        "http://" + userName + ":" + accessKey + "@hub-cloud.browserstack.com/wd/hub", caps)
 
     # 1. Go to homepage and login to account
     driver.get("https://www.browserstack.com/")
@@ -73,7 +70,3 @@ def tech_challenge(browser):
     # Close the browser
     driver.quit()
 
-
-# Run the test for each browser in parallel
-for browser in caps:
-    tech_challenge(DesiredCapabilities(**browser))
