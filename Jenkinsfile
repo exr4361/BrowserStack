@@ -11,7 +11,7 @@
          steps {
              sh 'python3 --version'
          }
-        stage ('test') {
+        stage('test') {
           steps {
               sh 'python3 browserstechchallenge.py'
           }
