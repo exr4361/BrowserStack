@@ -18,12 +18,12 @@
              withCredentials([[
                 $class: 'UsernamePasswordMultiBinding',
                 credentialsId: 'ebbaffb3-eb51-465c-bb0b-6c72e19f477d',
-                usernameVariable: 'email',
-                passwordVariable: 'pass',
+                usernameVariable: 'trialuser',
+                passwordVariable: 'trialpw',
              ]]) {
               sh """
-                    export BS_USER="${email}"
-                    export BS_PASS="${pass}"
+                    export BS_USR="${trialuser}"
+                    export BS_PW="${trialpw}"
                     python3 browserstechchallenge.py
                  """
              }
