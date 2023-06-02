@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 import time
+import os
 
 # BrowserStack Credentials
 username = os.environ.get('BROWSERSTACK_USERNAME')
