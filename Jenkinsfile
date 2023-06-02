@@ -6,7 +6,7 @@
              browserstack(credentialsId: 'ca55402a-4065-406b-bf9c-0945c60c487d') {
                  echo 'hello bs'
             }
-            sh 'pip3 install -r requirements.txt'
+            sh 'pip3 install -r requirements.txt --user'
            }
           }
         stage('version') {
