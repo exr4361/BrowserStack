@@ -46,7 +46,7 @@ def tech_challenge(browser):
     # Set up the WebDriver with the desired capabilities
     driver = webdriver.Remote(
         command_executor="https://hub-cloud.browserstack.com/wd/hub",
-        desired_capabilities=caps,
+        desired_capabilities=browser,
     )
 
     # 1. Go to homepage and login to account
