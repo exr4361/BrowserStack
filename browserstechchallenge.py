@@ -40,7 +40,7 @@ caps = [
 
 # BrowserStack Trial credentials
 bs_email = os.getenv('BS_USR')  # BrowserStack email from Jenkinsfile
-bs_password = osg.getenv('BS_PW')  # BrowerStack password from JenkinsFile
+bs_password = os.getenv('BS_PW')  # BrowerStack password from JenkinsFile
 
 def tech_challenge(browser):
     # Set up the WebDriver with the desired capabilities
