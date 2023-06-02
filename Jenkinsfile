@@ -21,11 +21,11 @@
                 usernameVariable: 'trialuser',
                 passwordVariable: 'trialpw',
              ]]) {
-              sh """
-                    export BS_USR="${trialuser}"
-                    export BS_PW="${trialpw}"
+              sh '''
+                    export BS_USR= %trialuser%
+                    export BS_PW= %trialpw%
                     python3 browserstechchallenge.py
-                 """
+                 '''
              }
           }
        }
