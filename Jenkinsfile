@@ -14,19 +14,15 @@
            }
          }
         stage('test') {
+           environment {
+              BS_Credentials = credentials('Trial')
+           }
           steps {
-             withCredentials([[
-                $class: 'UsernamePasswordMultiBinding',
-                credentialsId: 'ebbaffb3-eb51-465c-bb0b-6c72e19f477d',
-                usernameVariable: 'USER-EMAIL',
-                passwordVariable: 'USER-PSW',
-             ]]) {
               sh '''
-                    export BS_USR=${USER-EMAIL}
-                    export BS_PW=${USER-PSW}
+                    export BS_USR=${BS_Credentials_USR}
+                    export BS_PW=${BS_Credentials_PSR}
                     python3 browserstechchallenge.py
                  '''
-             }
           }
        }
      }
