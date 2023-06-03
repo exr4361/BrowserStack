@@ -1,4 +1,5 @@
 Appium-Python-Client
 browserstack-local
+browserstack-sdk
 selenium
 
