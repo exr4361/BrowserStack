@@ -25,7 +25,7 @@ browsers = [
     {
         "os": "OS X",
         "osVersion": "Ventura",
-        "buildName": "browserstack-tech-challenge",
+        "buildName": BROWSERSTACK_BUILD_NAME,
         "sessionName": "BStack parallel python",
         "browserName": "firefox",
         "browserVersion": "latest"
@@ -33,7 +33,7 @@ browsers = [
     {
         "os": "Windows",
         "osVersion": "10",
-        "buildName": "browserstack-tech-challenge",
+        "buildName": BROWSERSTACK_BUILD_NAME,
         "sessionName": "BStack parallel python",
         "browserName": "chrome",
         "browserVersion": "latest"
@@ -41,7 +41,7 @@ browsers = [
     {
         "osVersion": "12.1",
         "deviceName": "Samsung Galaxy S22",
-        "buildName": "browserstack-tech-challenge",
+        "buildName": BROWSERSTACK_BUILD_NAME,
         "sessionName": "BStack parallel python",
         "browserName": "samsung",
     },
