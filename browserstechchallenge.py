@@ -21,6 +21,7 @@ print("user:", username)
 # BrowserStack Trial credentials
 bs_email = os.getenv('BS_USR')  # BrowserStack email from Jenkinsfile
 bs_password = os.getenv('BS_PW')  # BrowerStack password from JenkinsFile
+print("email:",bs_email)
 
 # Set up capabilities for each browser
 browsers = [
