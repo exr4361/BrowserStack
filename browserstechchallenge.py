@@ -89,6 +89,7 @@ def tech_challenge(browser):
         time.sleep(3)  # Wait for the page to load
         login_button = driver.find_element_by_link_text("Sign in")
         login_button.click()
+        time.sleep(5)  # Wait for the login page to load
 
         # Login using your trial credentials
         user_input = driver.find_element_by_id("user_email_login")
