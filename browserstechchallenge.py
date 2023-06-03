@@ -6,6 +6,7 @@ from selenium.webdriver.safari.options import Options as SafariOptions
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.by import By
 from threading import Thread
+import requests
 import time
 import json
 import os
@@ -14,7 +15,7 @@ import os
 BROWSERSTACK_USERNAME = os.environ.get("BROWSERSTACK_USERNAME")
 BROWSERSTACK_ACCESS_KEY = os.environ.get("BROWSERSTACK_ACCESS_KEY")
 URL = "https://hub.browserstack.com/wd/hub" 
-BROWSERSTACK_BUILD_NAME = os.environ.get("JENKINS_LABEL")
+BROWSERSTACK_BUILD_NAME = os.environ.get("BROWSERSTACK_BUILD_NAME")
 
 # BrowserStack Trial credentials
 bs_email = os.getenv('BS_USR')  # BrowserStack email from Jenkinsfile
