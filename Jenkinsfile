@@ -13,10 +13,10 @@
                  export BS_USR=${BS_Credentials_USR}
                  export BS_PW=${BS_Credentials_PSW}
                  sh 'python3 browserstechchallenge.py' 
-            }
+             }
             browserStackReportPublisher 'automate'
            }
-          }
+         }
        }
      }
    }
