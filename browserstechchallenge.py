@@ -50,7 +50,7 @@ browsers = [
 bs_local = Local()
   
 # You can also use the environment variable - "BROWSERSTACK_ACCESS_KEY".
-bs_local_args = { "key": accessKey }
+bs_local_args = { "key": BROWSERSTACK_ACCESS_KEY }
   
 # Starts the Local instance with the required arguments
 bs_local.start(**bs_local_args)
