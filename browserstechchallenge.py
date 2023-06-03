@@ -14,7 +14,7 @@ import os
 BROWSERSTACK_USERNAME = os.getenv("BROWSERSTACK_USERNAME")
 BROWSERSTACK_ACCESS_KEY = os.getenv("BROWSERSTACK_ACCESS_KEY")
 URL = "https://hub.browserstack.com/wd/hub" 
-BROWSERSTACK_BUILD_NAME = os.getenv("BROWSERSTACK_BUILD_NAME")
+build_name = os.getenv("BROWSERSTACK_BUILD_NAME")
 
 # BrowserStack Trial credentials
 bs_email = os.getenv('BS_USR')  # BrowserStack email from Jenkinsfile
@@ -58,7 +58,7 @@ def tech_challenge(browser):
     # Set up the WebDriver with the desired capabilities
     bstack_options = {
         "osVersion": browser["osVersion"],
-        "buildName": BROWSERSTACK_BUILD_NAME,
+        "buildName": build_name,
         "sessionName": browser["sessionName"],
         "userName": BROWSERSTACK_USERNAME,
         "accessKey": BROWSERSTACK_ACCESS_KEY,
