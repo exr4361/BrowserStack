@@ -3,6 +3,8 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options as ChromeOptions
 from selenium.webdriver.firefox.options import Options as FirefoxOptions
 from selenium.webdriver.safari.options import Options as SafariOptions
+from browserstack.local_binary import LocalBinary
+from browserstack.bserrors import BrowserStackLocalError
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.by import By
 from browserstack.local import Local
