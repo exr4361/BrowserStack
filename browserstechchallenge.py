@@ -125,6 +125,26 @@ def tech_challenge(browser):
     # Close the browser
     driver.quit()
     
+    # Generate BrowserStack report
+    session_id = driver.session_id
+    generate_browserstack_report(session_id)
+
+    def generate_browserstack_report(session_id):
+        report_url = f"https://api.browserstack.com/automate/sessions/{session_id}.json"
+        headers = {
+            "Content-Type": "application/json",
+            "Authorization": f"Basic {BROWSERSTACK_USERNAME}:{BROWSERSTACK_ACCESS_KEY}",
+        }
+        payload = {
+            "status": "completed",
+            "reason": "Test completed successfully",
+        }
+        response = requests.put(report_url, headers=headers, json=payload)
+        if response.status_code == 200:
+            print("BrowserStack report generated successfully")
+        else:
+            print("Failed to generate BrowserStack report")
+    
     for browser in browsers:
         Thread(target=tech_challenge, args=(browser,)).start()
         
