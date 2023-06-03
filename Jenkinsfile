@@ -3,10 +3,10 @@
    stages {
          stage('setup') {
            steps {
-             environment {
-               BS_Credentials = credentials('Trial')
-             }
              browserstack(credentialsId: 'BS_Creds') {
+               environment {
+                   BS_Credentials = credentials('Trial')
+               }
                  echo 'hello bs'
                  sh 'pip3 install -r requirements.txt --user'
                  sh 'pip3 install urllib3==1.26.6 --user'
