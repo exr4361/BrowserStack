@@ -120,6 +120,9 @@ def tech_challenge(browser):
         time.sleep(1)  # Wait for the dropdown menu to open
         logout_button = driver.find_element_by_link_text("Logout")
         logout_button.click()
+        
+        
+
     
     except NoSuchElementException as err:
         message = "Exception: " + str(err.__class__) + str(err.msg)
@@ -129,7 +132,10 @@ def tech_challenge(browser):
         message = "Exception: " + str(err.__class__) + str(err.msg)
         driver.execute_script(
             'browserstack_executor: {"action": "setSessionStatus", "arguments": {"status":"failed", "reason": ' + json.dumps(message) + '}}')
-
+        
+    # For marking test as passed
+    driver.execute_script('browserstack_executor: {"action": "setSessionStatus", "arguments": {"status":"passed", "reason": "Yaay! my sample test passed"}}')
+    
     # Close the browser
     driver.quit()
     
