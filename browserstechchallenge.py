@@ -87,6 +87,8 @@ def tech_challenge(browser):
         # 1. Go to homepage and login to account
         driver.get("https://www.browserstack.com/")
         time.sleep(3)  # Wait for the page to load
+        login_button = driver.find_element_by_link_text("Sign in")
+        login_button.click()
 
         # Login using your trial credentials
         user_input = driver.find_element_by_id("user_email_login")
