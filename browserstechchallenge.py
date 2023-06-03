@@ -1,3 +1,4 @@
+from dotenv import load_dotenv
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options as ChromeOptions
@@ -11,11 +12,13 @@ import json
 import os
 
 # Environment Variables
-userName = "BROWSERSTACK_USERNAME"
-accessKey = "BROWSERSTACK_ACCESS_KEY"
-URL = "https://hub.browserstack.com/wd/hub" 
-buildName = "BROWSERSTACK_BUILD_NAME"
-print("build:", buildName);
+load_dotenv()
+BROWSERSTACK_USERNAME = os.environ.get(
+    "BROWSERSTACK_USERNAME") or "BROWSERSTACK_USERNAME"
+BROWSERSTACK_ACCESS_KEY = os.environ.get(
+    "BROWSERSTACK_ACCESS_KEY") or "BROWSERSTACK_ACCESS_KEY"
+URL = os.environ.get("URL") or "https://hub.browserstack.com/wd/hub"
+print("build:", BROWSERSTACK_USERNAME);
 
 # BrowserStack Trial credentials
 bs_email = os.getenv('BS_USR')  # BrowserStack email from Jenkinsfile
