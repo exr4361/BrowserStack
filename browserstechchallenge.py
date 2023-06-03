@@ -11,7 +11,6 @@ import json
 import os
 
 # Environment Variables
-load_dotenv()
 BROWSERSTACK_USERNAME = os.environ.get(
     "BROWSERSTACK_USERNAME")
 BROWSERSTACK_ACCESS_KEY = os.environ.get(
