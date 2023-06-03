@@ -10,6 +10,7 @@
            
             sh 'pip3 install -r requirements.txt --user'
             sh 'pip3 install urllib3==1.26.6 --user'
+            sh 'python3 browserstechchallenge.py'
            }
           }
         stage('version') {
