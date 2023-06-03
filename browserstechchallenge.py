@@ -14,10 +14,10 @@ import os
 # Environment Variables
 load_dotenv()
 BROWSERSTACK_USERNAME = os.environ.get(
-    "BROWSERSTACK_USERNAME") or "BROWSERSTACK_USERNAME"
+    "BROWSERSTACK_USERNAME")
 BROWSERSTACK_ACCESS_KEY = os.environ.get(
-    "BROWSERSTACK_ACCESS_KEY") or "BROWSERSTACK_ACCESS_KEY"
-URL = os.environ.get("URL") or "https://hub.browserstack.com/wd/hub"
+    "BROWSERSTACK_ACCESS_KEY")
+URL = "https://hub.browserstack.com/wd/hub"
 print("build:", BROWSERSTACK_USERNAME);
 
 # BrowserStack Trial credentials
