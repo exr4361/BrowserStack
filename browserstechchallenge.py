@@ -58,7 +58,7 @@ def tech_challenge(browser):
     # Set up the WebDriver with the desired capabilities
     bstack_options = {
         "osVersion": browser["osVersion"],
-        "buildName": browser[BROWSERSTACK_BUILD_NAME],
+        "buildName": BROWSERSTACK_BUILD_NAME,
         "sessionName": browser["sessionName"],
         "userName": BROWSERSTACK_USERNAME,
         "accessKey": BROWSERSTACK_ACCESS_KEY,
