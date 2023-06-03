@@ -11,10 +11,11 @@ import json
 import os
 
 # Environment Variables
-username = os.environ.get("BROWSERSTACK_USERNAME")
-accessKey = os.environ.get("BROWSERSTACK_ACCESS_KEY")
+userName = "BROWSERSTACK_USERNAME"
+accessKey = "BROWSERSTACK_ACCESS_KEY"
 URL = "https://hub.browserstack.com/wd/hub" 
-buildName = os.environ.get("BROWSERSTACK_BUILD_NAME")
+buildName = "BROWSERSTACK_BUILD_NAME"
+print("build:" buildName);
 
 # BrowserStack Trial credentials
 bs_email = os.getenv('BS_USR')  # BrowserStack email from Jenkinsfile
