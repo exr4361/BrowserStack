@@ -6,7 +6,6 @@ from selenium.webdriver.safari.options import Options as SafariOptions
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.by import By
 from threading import Thread
-import requests
 import time
 import json
 import os
@@ -124,10 +123,6 @@ def tech_challenge(browser):
     
     # Close the browser
     driver.quit()
-    
-    # Generate and provide the BrowserStack report URL
-    report_url = f"https://app-automate.browserstack.com/dashboard/v2/builds/{BROWSERSTACK_BUILD_NAME}/sessions/{session_id}"
-    print("BrowserStack Report URL:", report_url)
     
     # Run test on browsers in parallel
     for browser in browsers:
