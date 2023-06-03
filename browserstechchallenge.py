@@ -16,7 +16,7 @@ BS_USERNAME = os.environ.get(
 BS_ACCESS_KEY = os.environ.get(
     "BROWSERSTACK_ACCESS_KEY")
 URL = "https://hub.browserstack.com/wd/hub"
-BS_BUILD_NAME = os.environ.get("BROWSERSTACK_BUILD_NAME")
+BROWSERSTACK_BUILD_NAME = os.environ.get("BROWSERSTACK_BUILD_NAME")
 print("build:", BS_BUILD_NAME)
 
 # BrowserStack Trial credentials
@@ -62,7 +62,7 @@ def tech_challenge(browser):
     # Set up the WebDriver with the desired capabilities
     bstack_options = {
         "osVersion": browser["osVersion"],
-        "build": BS_BUILD_NAME,
+        "build": BROWSERSTACK_BUILD_NAME,
         "sessionName": browser["sessionName"],
         "userName": BS_USERNAME,
         "accessKey": BS_ACCESS_KEY,
