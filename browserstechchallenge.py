@@ -125,6 +125,10 @@ def tech_challenge(browser):
     # Close the browser
     driver.quit()
     
+    # Generate and provide the BrowserStack report URL
+    report_url = f"https://app-automate.browserstack.com/dashboard/v2/builds/{BROWSERSTACK_BUILD_NAME}/sessions/{session_id}"
+    print("BrowserStack Report URL:", report_url)
+    
     # Run test on browsers in parallel
     for browser in browsers:
         Thread(target=tech_challenge, args=(browser,)).start()
