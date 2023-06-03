@@ -14,7 +14,7 @@ import os
 BROWSERSTACK_USERNAME = os.environ.get("BROWSERSTACK_USERNAME")
 BROWSERSTACK_ACCESS_KEY = os.environ.get("BROWSERSTACK_ACCESS_KEY")
 URL = "https://hub.browserstack.com/wd/hub" 
-buildName = os.environ.get("JENKINS_LABEL")
+BROWSERSTACK_BUILD_NAME = os.environ.get("JENKINS_LABEL")
 
 # BrowserStack Trial credentials
 bs_email = os.getenv('BS_USR')  # BrowserStack email from Jenkinsfile
@@ -65,7 +65,6 @@ def tech_challenge(browser):
         "sessionName": browser["sessionName"],
         "userName": BROWSERSTACK_USERNAME,
         "accessKey": BROWSERSTACK_ACCESS_KEY,
-        "local": "true"
     }
     if "os" in browser:
         bstack_options["os"] = browser["os"]
