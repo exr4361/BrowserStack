@@ -20,6 +20,8 @@ BROWSERSTACK_BUILD_NAME = os.getenv("BROWSERSTACK_BUILD_NAME")
 bs_email = os.getenv('BS_USR')  # BrowserStack email from Jenkinsfile
 bs_password = os.getenv('BS_PW')  # BrowerStack password from JenkinsFile
 
+bs_local_args = { "key": BROWSERSTACK_ACCESS_KEY, "proxyHost": "127.0.0.1", "proxyPort": "8000"}
+
 # Set up capabilities for each browser
 browsers = [
     {
