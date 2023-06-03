@@ -16,7 +16,7 @@ BS_USERNAME = os.environ.get(
 BS_ACCESS_KEY = os.environ.get(
     "BROWSERSTACK_ACCESS_KEY")
 URL = "https://hub.browserstack.com/wd/hub"
-BS_BUILD_NAME = os.getenv("BROWSERSTACK_BUILD_NAME")
+BS_BUILD_NAME = os.environ.get("BROWSERSTACK_BUILD_NAME")
 print("build:", BS_BUILD_NAME)
 
 # BrowserStack Trial credentials
@@ -31,7 +31,6 @@ browsers = [
         "osVersion": "Ventura",
         "sessionName": "BStack parallel python",
         "browserName": "firefox",
-        "build": BS_BUILD_NAME,
         "browserVersion": "latest"
     },
     {
@@ -39,7 +38,6 @@ browsers = [
         "osVersion": "10",
         "sessionName": "BStack parallel python",
         "browserName": "chrome",
-        "build": BS_BUILD_NAME,
         "browserVersion": "latest"
     },
     {
@@ -47,7 +45,6 @@ browsers = [
         "deviceName": "Samsung Galaxy S22",
         "sessionName": "BStack parallel python",
         "browserName": "samsung",
-        "build": BS_BUILD_NAME,
     },
 ]
 
@@ -65,7 +62,7 @@ def tech_challenge(browser):
     # Set up the WebDriver with the desired capabilities
     bstack_options = {
         "osVersion": browser["osVersion"],
-        "buildName": browser["buildName"],
+        "build": BS_BUILD_NAME,
         "sessionName": browser["sessionName"],
         "userName": BS_USERNAME,
         "accessKey": BS_ACCESS_KEY,
