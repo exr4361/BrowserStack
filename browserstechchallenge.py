@@ -17,7 +17,7 @@ BS_ACCESS_KEY = os.environ.get(
     "BROWSERSTACK_ACCESS_KEY")
 URL = "https://hub.browserstack.com/wd/hub"
 BROWSERSTACK_BUILD_NAME = os.environ.get("BROWSERSTACK_BUILD_NAME")
-print("build:", BS_BUILD_NAME)
+print("build:", BROWSERSTACK_BUILD_NAME)
 
 # BrowserStack Trial credentials
 bs_email = os.getenv("BS_Credentials_USR")  # BrowserStack email from Jenkinsfile
