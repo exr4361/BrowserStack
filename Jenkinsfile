@@ -26,8 +26,8 @@
                     export BS_PW=${BS_Credentials_PSW}
                     python3 browserstechchallenge.py
                  '''
+           browserStackReportPublisher 'automate'
           }
-          browserStackReportPublisher 'automate'
        }
      }
    }
