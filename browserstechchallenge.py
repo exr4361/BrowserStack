@@ -15,7 +15,7 @@ userName = "BROWSERSTACK_USERNAME"
 accessKey = "BROWSERSTACK_ACCESS_KEY"
 URL = "https://hub.browserstack.com/wd/hub" 
 buildName = "BROWSERSTACK_BUILD_NAME"
-print("build:" buildName);
+print("build:", buildName);
 
 # BrowserStack Trial credentials
 bs_email = os.getenv('BS_USR')  # BrowserStack email from Jenkinsfile
