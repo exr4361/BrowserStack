@@ -14,7 +14,7 @@ import os
 BROWSERSTACK_USERNAME = os.getenv("BROWSERSTACK_USERNAME")
 BROWSERSTACK_ACCESS_KEY = os.getenv("BROWSERSTACK_ACCESS_KEY")
 URL = "https://hub.browserstack.com/wd/hub" 
-BROWSERSTACK_BUILD_NAME = os.getenv("BROWSERSTACK_BUILD_NAME")
+BROWSERSTACK_BUILD = os.getenv("BROWSERSTACK_BUILD_NAME")
 
 # BrowserStack Trial credentials
 bs_email = os.getenv('BS_USR')  # BrowserStack email from Jenkinsfile
@@ -121,7 +121,7 @@ def tech_challenge(browser):
             'browserstack_executor: {"action": "setSessionStatus", "arguments": {"status":"failed", "reason": ' + json.dumps(message) + '}}')
         
     # For marking test as passed
-    driver.execute_script('browserstack_executor: {"action": "setSessionStatus", "arguments": {"status":"passed", "reason": "Yaay! my sample test passed"}}')
+    driver.execute_script('browserstack_executor: {"action": "setSessionStatus", "arguments": {"status":"passed", "reason": "Test passed"}}')
     
     # Close the browser
     driver.quit()
