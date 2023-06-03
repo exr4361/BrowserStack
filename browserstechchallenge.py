@@ -16,7 +16,7 @@ BS_USERNAME = os.environ.get(
 BS_ACCESS_KEY = os.environ.get(
     "BROWSERSTACK_ACCESS_KEY")
 URL = "https://hub.browserstack.com/wd/hub"
-BS_BUILD_NAME = os.environ.get("BROWSERSTACK_BUILD")
+BS_BUILD_NAME = os.getenv("BROWSERSTACK_BUILD_NAME")
 print("build:", BS_BUILD_NAME)
 
 # BrowserStack Trial credentials
