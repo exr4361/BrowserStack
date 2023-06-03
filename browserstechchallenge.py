@@ -3,6 +3,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options as ChromeOptions
 from selenium.webdriver.firefox.options import Options as FirefoxOptions
 from selenium.webdriver.safari.options import Options as SafariOptions
+from browserstack.local import Local
 from threading import Thread
 import time
 import json
@@ -45,6 +46,20 @@ browsers = [
     },
 ]
 
+# Creates an instance of Local
+bs_local = Local()
+  
+# You can also use the environment variable - "BROWSERSTACK_ACCESS_KEY".
+bs_local_args = { "key": accessKey }
+  
+# Starts the Local instance with the required arguments
+bs_local.start(**bs_local_args)
+  
+# Check if BrowserStack local instance is running
+print(bs_local.isRunning())
+  
+# Your test code goes here, from creating the driver instance till the end.
+
 # Function switch for desired browser
 def get_browser_option(browser):
     switcher = {
@@ -62,7 +77,8 @@ def tech_challenge(browser):
         "buildName": cap["buildName"],
         "sessionName": cap["sessionName"],
         "userName": BROWSERSTACK_USERNAME,
-        "accessKey": BROWSERSTACK_ACCESS_KEY
+        "accessKey": BROWSERSTACK_ACCESS_KEY,
+        "local": "true"
     }
     if "os" in browser:
         bstack_options["os"] = browser["os"]
@@ -117,4 +133,11 @@ def tech_challenge(browser):
     
     for browser in browsers:
         Thread(target=tech_challenge, args=(browser,)).start()
+        
+# Stop the Local instance after your test run is completed. 
+bs_local.stop()
+
+
+
+
 
