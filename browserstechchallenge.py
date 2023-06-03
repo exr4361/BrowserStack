@@ -98,7 +98,11 @@ def tech_challenge(browser):
         pass_input.send_keys(Keys.RETURN)
 
         # 2. Make sure that the homepage includes a link to invite users and retrieve the link’s URL
-
+        time.sleep(5)  # Wait for the login to complete and the homepage to load
+        invite_link = driver.find_element_by_link_text("Invite team")
+        assert invite_link.is_displayed(), "Invite user link not found on the homepage" # No invite link found in homepage when logged in
+        invite_url = invite_link.get_attribute("href")
+        print("URL to invite users:", invite_url)
 
         # 3. Log out of BrowserStack
         user_account = driver.find_element_by_class_name("account-dropdown-toggle")
@@ -106,9 +110,6 @@ def tech_challenge(browser):
         time.sleep(1)  # Wait for the dropdown menu to open
         logout_button = driver.find_element_by_link_text("Logout")
         logout_button.click()
-        
-        
-
     
     except NoSuchElementException as err:
         message = "Exception: " + str(err.__class__) + str(err.msg)
