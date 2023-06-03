@@ -15,13 +15,10 @@ username = os.environ.get("BROWSERSTACK_USERNAME")
 accessKey = os.environ.get("BROWSERSTACK_ACCESS_KEY")
 URL = "https://hub.browserstack.com/wd/hub" 
 buildName = os.environ.get("BROWSERSTACK_BUILD_NAME")
-print("buildName:", buildName)
-print("user:", username)
 
 # BrowserStack Trial credentials
 bs_email = os.getenv('BS_USR')  # BrowserStack email from Jenkinsfile
 bs_password = os.getenv('BS_PW')  # BrowerStack password from JenkinsFile
-print("email:",bs_email)
 
 # Set up capabilities for each browser
 browsers = [
