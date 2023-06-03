@@ -63,6 +63,7 @@ def tech_challenge(browser):
     bstack_options = {
         "osVersion": browser["osVersion"],
         "build": BROWSERSTACK_BUILD_NAME,
+        "buildName": BROWSERSTACK_BUILD_NAME,
         "sessionName": browser["sessionName"],
         "userName": BS_USERNAME,
         "accessKey": BS_ACCESS_KEY,
