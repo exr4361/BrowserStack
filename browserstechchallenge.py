@@ -20,8 +20,8 @@ BS_BUILD_NAME = os.environ.get("BROWSERSTACK_BUILD_NAME")
 print("build:", BS_BUILD_NAME)
 
 # BrowserStack Trial credentials
-bs_email = os.getenv('BS_USR')  # BrowserStack email from Jenkinsfile
-bs_password = os.getenv('BS_PW')  # BrowerStack password from JenkinsFile
+bs_email = os.getenv("BS_Credentials_USR")  # BrowserStack email from Jenkinsfile
+bs_password = os.getenv("BS_Credentials_PSW")  # BrowerStack password from JenkinsFile
 
 # Set up capabilities for each browser
 browsers = [
@@ -30,6 +30,7 @@ browsers = [
         "osVersion": "Ventura",
         "sessionName": "BStack parallel python",
         "browserName": "firefox",
+        "buildName": BS_BUILD_NAME,
         "browserVersion": "latest"
     },
     {
@@ -37,6 +38,7 @@ browsers = [
         "osVersion": "10",
         "sessionName": "BStack parallel python",
         "browserName": "chrome",
+        "buildName": BS_BUILD_NAME,
         "browserVersion": "latest"
     },
     {
@@ -44,6 +46,7 @@ browsers = [
         "deviceName": "Samsung Galaxy S22",
         "sessionName": "BStack parallel python",
         "browserName": "samsung",
+        "buildName": BS_BUILD_NAME,
     },
 ]
 
@@ -61,7 +64,7 @@ def tech_challenge(browser):
     # Set up the WebDriver with the desired capabilities
     bstack_options = {
         "osVersion": browser["osVersion"],
-        "buildName": BS_BUILD_NAME,
+        "buildName": browser["buildName"],
         "sessionName": browser["sessionName"],
         "userName": BS_USERNAME,
         "accessKey": BS_ACCESS_KEY,
