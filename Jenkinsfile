@@ -6,7 +6,7 @@
              browserstack(credentialsId: 'ca55402a-4065-406b-bf9c-0945c60c487d') {
                  echo 'hello bs'
             }
-            browserStackReportPublisher 'automate'
+            
             sh 'pip3 install -r requirements.txt --user'
             sh 'pip3 install urllib3==1.26.6 --user'
            }
@@ -27,6 +27,7 @@
                     python3 browserstechchallenge.py
                  '''
           }
+          browserStackReportPublisher 'automate'
        }
      }
    }
