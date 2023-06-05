@@ -15,7 +15,7 @@ BS_USERNAME = os.environ.get(
     "BROWSERSTACK_USERNAME")
 BS_ACCESS_KEY = os.environ.get(
     "BROWSERSTACK_ACCESS_KEY")
-URL = "https://hub.browserstack.com/wd/hub"
+URL = "https://{}:{}@hub.browserstack.com/wd/hub".format(BS_USERNAME, BS_ACCESS_KEY)
 BS_BUILD_NAME = os.environ.get("BROWSERSTACK_BUILD_NAME")
 print("build:", BS_BUILD_NAME)
 
